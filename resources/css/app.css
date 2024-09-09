@@ -1,0 +1,22 @@
+.badge {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-size: 0.875em; /* Adjust as needed */
+    text-align: center;
+    border-radius: 0.25em;
+    white-space: nowrap; /* Prevents wrapping of text */
+}
+
+.bg-success {
+    background-color: #28a745; /* Green color */
+    color: white;
+}
+
+.bg-danger {
+    background-color: #dc3545; /* Red color */
+    color: white;
+}
+
+.badge-fixed-width {
+    width: 100px; /* Adjust width as needed */
+}

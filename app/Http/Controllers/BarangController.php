@@ -12,7 +12,7 @@ class BarangController extends Controller
         $data = Barang::all();
         // $data = ModelsItem::where('condition','Mulus no minus')->get();
         return view('user.barang', compact('data'));
-    }
+    } 
 
     function form()
     {
@@ -34,7 +34,7 @@ class BarangController extends Controller
 
     function deletebarang(Request $request, $id)
     {
-        $barang= Barang::find($id);
+        $barang = Barang::find($id);
         if (!$barang) {
             return redirect()->back()->with('error', 'Item tidak ditemukan.');
         }
@@ -45,13 +45,13 @@ class BarangController extends Controller
 
     function updatebarang(Request $request, $id)
     {
-        $data= Barang::findOrFail($id);
+        $data = Barang::findOrFail($id);
         return view('user.update_barang',compact('data'));
     }
 
     public function suksesupdate(Request $request, $id)
     {
-        $barang= Barang::findOrFail($id);
+        $barang = Barang::findOrFail($id);
         $barang->update([
             'name' => $request->input('name'),
             'type' => $request->input('type'),

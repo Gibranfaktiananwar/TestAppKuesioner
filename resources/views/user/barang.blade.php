@@ -11,7 +11,6 @@
                                 <div class="mb-2 mb-lg-0">
                                     <h3 class="mb-0 text-white">Data Barang</h3>
                                 </div>
-                       
                                 @if(Auth::check() && Auth::user()->role != 'mahasiswa')
                                 <div class="mb-2 mb-lg-0 bg-white">
                                     <a href="">
@@ -55,12 +54,12 @@
                                                     <td class="align-middle col-2">
                                                     <a href="{{ route('barang-update', ['id' => $ModelsItem->id]) }}" class="btn btn-success">Update</a>
                                                     <form action="{{ route('barang-delete', ['id' => $ModelsItem->id]) }}" method="post"
-                                    style="display: inline;">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                    @endif
-                                </form> 
+                                                style="display: inline;">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                                @endif
+                                                    </form> 
                                                 </td>
                                                 </tr>
                                             @endforeach

@@ -32,6 +32,31 @@ class UserSeeder extends Seeder
             'role' => 'admin',
         ]);
 
+        // Membuat user Responden
+        User::create([
+            'name' => 'RespondenSekolah',
+            'email' => 'respondensekolah@gmail.com',
+            'password' => Hash::make('respondensekolah'),
+            'role' => 'respondensekolah',
+        ]);
+
+
+        // Membuat user Responden
+        User::create([
+            'name' => 'RespondenGuru',
+            'email' => 'respondenguru@gmail.com',
+            'password' => Hash::make('respondenguru'),
+            'role' => 'respondenguru',
+        ]);
+
+        // Membuat user Responden
+        User::create([
+            'name' => 'RespondenMurid',
+            'email' => 'respondenmurid@gmail.com',
+            'password' => Hash::make('respondenmurid'),
+            'role' => 'respondenmurid',
+        ]);
+
         // Membuat user mahasiswa
         User::create([
             'name' => 'Mahasiswa',

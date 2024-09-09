@@ -17,7 +17,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/theme.min.css')}}">
-    <title>Peminjaman Barang</title>
+    <title>Kuesioner</title>
 </head>
 
 <body class="bg-light">

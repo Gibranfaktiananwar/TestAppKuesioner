@@ -1,8 +1,8 @@
 <nav class="navbar-vertical navbar">
     <div class="nav-scroller">
         <!-- Brand logo -->
-        <a class="navbar-brand" href="./index.html">
-            <h4 class="text-white">Peminjaman Barang</h4>
+        <a class="navbar-brand" style="padding-top: 19px;" href="./dashboard">
+            <h4 class="text-white">SIAGA</h4>
         </a>
         <!-- Navbar nav -->
         <ul class="navbar-nav flex-column" id="sideNavbar">
@@ -11,11 +11,6 @@
                     <i data-feather="home" class="nav-icon icon-xs me-2"></i>
                     Dashboard
                 </a>
-            </li>
-
-            <!-- Nav item -->
-            <li class="nav-item">
-                <div class="navbar-heading">MASTER DATA</div>
             </li>
 
             <!-- Nav item -->
@@ -34,7 +29,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link has-arrow" href="/mahasiswa">
+                            <a class="nav-link" href="/mahasiswa">
                                 Mahasiswa
                             </a>
                         </li>
@@ -49,20 +44,37 @@
                     Barang
                 </a>
             </li>
+
+            @if(Auth::check() && (Auth::user()->role == 'respondensekolah' || Auth::user()->role == 'admin'))
             <!-- Nav item -->
             <li class="nav-item">
-                <a class="nav-link" href="/Peminjaman">
+                <a class="nav-link" href="/isisurvey-sekolah">
                     <i data-feather="sidebar" class="nav-icon icon-xs me-2"> </i>
-                    Peminjaman
+                    Isi Survey untuk Sekolah
                 </a>
             </li>
+            @endif
+
+            @if(Auth::check() && (Auth::user()->role == 'respondenguru' || Auth::user()->role == 'admin'))
             <!-- Nav item -->
             <li class="nav-item">
-                <a class="nav-link" href="Pengembalian">
+                <a class="nav-link" href="/isisurvey-guru">
                     <i data-feather="sidebar" class="nav-icon icon-xs me-2"> </i>
-                    Pengembalian
+                    Isi Survey untuk Guru
                 </a>
             </li>
+            @endif
+
+            @if(Auth::check() && (Auth::user()->role == 'respondenmurid' || Auth::user()->role == 'admin'))
+            <!-- Nav item -->
+            <li class="nav-item">
+                <a class="nav-link" href="/isisurvey-murid">
+                    <i data-feather="sidebar" class="nav-icon icon-xs me-2"> </i>
+                    Isi Survey untuk murid
+                </a>
+            </li>
+            @endif
+
         </ul>
     </div>
 </nav>
